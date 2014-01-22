@@ -15,7 +15,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
+  gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
 end
@@ -24,6 +24,8 @@ gem 'jquery-rails'
 
 group :test do
     gem 'cucumber-rails', :require => false
+    gem 'minitest'
+    gem 'database_cleaner'
 end
 
 # To use ActiveModel has_secure_password
