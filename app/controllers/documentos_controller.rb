@@ -50,7 +50,7 @@ class DocumentosController < ApplicationController
 
     respond_to do |format|
       if @documento.save
-        format.html { redirect_to @documento, notice: 'Documento was successfully created.' }
+        format.html { redirect_to @documento, notice: 'Documento creado con éxito.' }
         format.json { render json: @documento, status: :created, location: @documento }
       else
         format.html { render action: "new" }
