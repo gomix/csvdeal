@@ -13,11 +13,20 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem "paperclip"
 
 group :test do
     gem 'cucumber-rails', :require => false
     gem 'minitest'
     gem 'database_cleaner'
+    gem 'rspec-rails'
+end
+
+group :development do
+    gem 'cucumber-rails', :require => false
+    gem 'minitest'
+    gem 'database_cleaner'
+    gem 'rspec-rails'
 end
 
 # To use ActiveModel has_secure_password
