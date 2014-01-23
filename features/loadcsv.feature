@@ -6,20 +6,18 @@ Característica: Soporte de documentos CSV
 	vía Web dichos documentos, así como ofrecer facilidades para preclasificación
  	y ordenado de dichos CSV para preprocesarlos antes de la impresión.
 
-  Escenario: Carga Web de documento CSV
-	Dado que se visita la página para SubirDatosCSV
-	Y especifica el archivo anexo a subir
-	Y presiona el botón de CargarDocumento CSV al sistema
-	Entonces la carga del documento debe ser registrada en el sistema
-	Y el documento CSV, almacenado en el sistema
-	Y el documento CSV debe ser interpretado (parseado)
+  @wip
+  Escenario: Carga Web de documento CSV 
+	Dado que se quiere registrar un archivo .csv
+	Y el usuario lo carga en el sistema
+	Entonces la carga debe ser registrada en el sistema
+	Y el documento almacenado en el sistema
+	Y el documento debe ser interpretado (parseado)
 	
-  Escenario: Ordenamiento por campo dado de un documento CSV
-	Dado que existe un documento CSV FacturacionCANTVEnero2013
-	Y que se visita la pagina de vista de dicho documento
-	Y el usuario escoge ordenar por alguno de los campos
+  Escenario: Ordenamiento por campos dado un documento
+	Dado que existe un documento 
+	Y el usuario escoge ordenar por alguno de los campos existentes
 	Y con el criterio ascendente
-	Y presiona procesar
 	Entonces el sistema procedera a ordenar el documento según el criterio dado
 	Y ofrecerá la opción de seguir ordenando por otro criterio adicional
 	Y ofrecerá la opción de descarga del documento ordenado

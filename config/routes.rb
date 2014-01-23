@@ -1,4 +1,7 @@
 Csvdeal::Application.routes.draw do
+  resources :documentos
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
