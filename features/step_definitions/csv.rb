@@ -14,7 +14,11 @@ Entonces(/^la carga debe ser registrada en el sistema$/) do
 end
 
 Entonces(/^el documento almacenado en el sistema$/) do
-  pending # express the regexp above with the code you wish you had
+  current_path.should eq documento_path(Documento.find(1))
+  id = Rails.application.routes.recognize_path(current_path)[:id]
+  puts Documento.find(id).csv_file_file_name
+  puts Documento.find(id).inspect
+  # El archivo señalado por el sistema debe existir
 end
 
 Entonces(/^el documento debe ser interpretado \(parseado\)$/) do
