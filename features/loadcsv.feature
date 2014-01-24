@@ -8,11 +8,10 @@ Característica: Soporte de documentos CSV
 
   @wip
   Escenario: Carga Web de documento CSV 
-	Dado que se quiere registrar un archivo .csv
+	Dado que se quiere registrar un archivo CSV
 	Y el usuario lo carga en el sistema
 	Entonces la carga debe ser registrada en el sistema
-	Y el documento almacenado en el sistema
-	Y el documento debe ser interpretado (parseado)
+	Y se mostrará mensaje de confirmacion de éxito de la carga del documento CSV
 	
   Escenario: Ordenamiento por campos dado un documento
 	Dado que existe un documento 

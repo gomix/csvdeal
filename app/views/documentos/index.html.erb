@@ -1,4 +1,4 @@
-<h1>Listing documentos</h1>
+<h1>Listado de documentos CSV cargados</h1>
 
 <table>
   <tr>
@@ -9,13 +9,13 @@
 
 <% @documentos.each do |documento| %>
   <tr>
-    <td><%= link_to 'Show', documento %></td>
-    <td><%= link_to 'Edit', edit_documento_path(documento) %></td>
-    <td><%= link_to 'Destroy', documento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Mostrar', documento %></td>
+    <td><%= link_to 'Editar', edit_documento_path(documento) %></td>
+    <td><%= link_to 'Eliminar', documento, method: :delete, data: { confirm: '¿Está seguro?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Documento', new_documento_path %>
+<%= link_to 'Nuevo Documento', new_documento_path %>
