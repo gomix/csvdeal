@@ -6,13 +6,14 @@ Característica: Soporte de documentos CSV
 	vía Web dichos documentos, así como ofrecer facilidades para preclasificación
  	y ordenado de dichos CSV para preprocesarlos antes de la impresión.
 
-  @wip
+  @done
   Escenario: Carga Web de documento CSV 
 	Dado que se quiere registrar un archivo CSV
 	Y el usuario lo carga en el sistema
 	Entonces la carga debe ser registrada en el sistema
 	Y se mostrará mensaje de confirmacion de éxito de la carga del documento CSV
-	
+
+  @todo	
   Escenario: Ordenamiento por campos dado un documento
 	Dado que existe un documento 
 	Y el usuario escoge ordenar por alguno de los campos existentes

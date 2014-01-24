@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
-<p id="notice2"><%= @notice2 %></p>
+<p id="status" style="{display:none}"><%= flash[:estado] %></p>
+<p id="status" style="display:none">0</p>
 
 <%= link_to 'Editar', edit_documento_path(@documento) %> |
 <%= link_to 'Atrás', documentos_path %>
+<%= link_to 'Exportar TODO', documentos_path %>
