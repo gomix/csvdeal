@@ -6,7 +6,6 @@ class DocumentosController < ApplicationController
    csv_text = File.read(params[:file].tempfile.to_path.to_s)
  end 
 
- 
  def index
     @documentos = Documento.all
 
@@ -19,7 +18,16 @@ class DocumentosController < ApplicationController
   # GET /documentos/1
   # GET /documentos/1.json
   def show
+    # Al mostrar, no solo se puede escoger la representación del recurso
+    # sino que también se le pueden pasar acciones como parte del query string
+    # Ejemplo /documentos/:id?filtro=cantv
+    # Indicaría obtener el recurso expresado/filtrado al filtro cantv del recurso
     @documento = Documento.find(params[:id])
+
+    if params[:filtro] 
+      @documento.filtrar(params[:filtro])
+    #  logger.debug "Documento, filtrar, filtro: #{params[:filtro]}"
+    end
 
     respond_to do |format|
       format.html # show.html.erb
