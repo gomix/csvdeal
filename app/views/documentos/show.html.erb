@@ -1,7 +1,14 @@
 <p id="notice"><%= notice %></p>
 <p id="status" style="{display:none}"><%= flash[:estado] %></p>
-<p id="status" style="display:none">0</p>
 
-<%= link_to 'Editar', edit_documento_path(@documento) %> |
+<%= form_tag(@documento, method: :get, id: :filtro) do -%>
+  <%=  select_tag "filtro", 
+         options_for_select([['CANTV', 'cantv'], 
+                            ['PDVSA', 'pdvsa'],
+                            ['FANB', 'fanb'],
+                            ['FANB Armada', 'armada']]) %> 
+  <%= submit_tag 'Filtrar' %>
+<% end -%>
+
 <%= link_to 'Atrás', documentos_path %>
-<%= link_to 'Exportar TODO', documentos_path %>
+<%= link_to "Descargar", @documento.csv_file.url %>
