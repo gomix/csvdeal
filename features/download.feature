@@ -7,7 +7,6 @@ Característica: Se debe poder descargar los originales de los documentos CSV
     Y que el usuario visita el listado de documentos
     Y que el usuario selecciona el primero de la lista para mostrar
   
-    @wip
     Escenario: Descarga del archivo original
     Dado que el usuario presiona el enlace Descargar
-    Entonces se obtendrá un documento descargable con documento original
+    Entonces se obtendrá un documento descargable con el documento original

@@ -8,8 +8,8 @@ Característica: Filtrado CANTV de documento CSV
     Dado que existen CSV ya cargados	
     Y que el usuario visita el listado de documentos
     Y que el usuario selecciona el primero de la lista para mostrar
-  
-  @wip
+
+  @dev
   Escenario: Consulta simple con filtro cantv aplicado
     Dado que se selecciona el filtro cantv de una lista desplegable
     Y que el usario presiona el botón Filtrar

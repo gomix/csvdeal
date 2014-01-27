@@ -11,4 +11,5 @@
 <% end -%>
 
 <%= link_to 'Atrás', documentos_path %>
-<%= link_to "Descargar", @documento.csv_file.url %>
+<%= link_to "Original", @documento.csv_file.url %>
+<%= link_to "Filtrado para CANTV", @documento.csv_file.url(:cantv) %>

@@ -50,7 +50,7 @@ Dado(/^que el usuario presiona el enlace Descargar$/) do
   page.has_link?("Descargar").should eq true
 end
 
-Entonces(/^se obtendrá un documento descargable con documento original$/) do
+Entonces(/^se obtendrá un documento descargable con el documento original$/) do
   click_link 'Descargar'
   page.text.should eql("nombre,apellidos foo,bar juan,bimba")
 end

@@ -1,6 +1,6 @@
 class Documento < ActiveRecord::Base
   attr_accessible :csv_file
-  has_attached_file :csv_file
+  has_attached_file :csv_file ,:styles => { :cantv => { :quality => :better } }, :processors => ['cantv']
 
   def filtrar(filtro)
     # /documentos/:id?filtro=:fitro_id debería ser enrutado aquí con GET
@@ -18,6 +18,7 @@ class Documento < ActiveRecord::Base
 
   def filtro_cantv
     # Reglas de filtrado para documentos CSV CANTV
+    # Solo debe aplicar el filtro y escribir :csv_filtrado
     self
   end
   
