@@ -11,7 +11,8 @@ class Cantv < Paperclip::Processor
   # Returns the Tempfile that contains the new csv file.
     def make
       #src = @file
-      dst = Tempfile.new(@basename, :encoding => 'utf8')
+      #dst = Tempfile.new(@basename, :encoding => 'utf8')
+      dst = Tempfile.new(@basename)
       File.open(File.expand_path(dst.path),"w+") do |f|
         CSV.foreach(@file.path) do |row|
           f.write(filtrar(row)) if row

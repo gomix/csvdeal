@@ -15,6 +15,15 @@
   <div id="csv_file">
     <%= f.file_field :csv_file %>
   </div>
+  
+  <div id="csv_file_filtro">
+  <%=  select_tag "filtro", 
+         options_for_select([['CANTV', 'cantv'], 
+                            ['PDVSA', 'pdvsa'],
+                            ['FANB', 'fanb'],
+                            ['FANB Armada', 'armada']]) %> 
+  </div>
+
 
   <div class="actions">
     <%= f.submit "Enviar" %>

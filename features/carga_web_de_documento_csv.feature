@@ -11,3 +11,10 @@ Característica: Carga Web de documento CSV
 	Y el usuario lo carga en el sistema
 	Entonces la carga debe ser registrada en el sistema
 	Y se mostrará mensaje de confirmacion de éxito de la carga del documento CSV
+
+  Escenario: Carga Web de documento CSV CANTV 
+	Dado que se quiere registrar un archivo CSV
+	Y especifica que el filtro a aplicar es CANTV
+	Y el usuario lo carga en el sistema
+	Entonces la carga debe ser registrada en el sistema
+	Y se mostrará mensaje de confirmacion de éxito de la carga del documento CSV

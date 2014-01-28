@@ -1,8 +1,7 @@
 # language: es
-
+@wip
 Característica: Ordenamiento de documento CSV
 
-  @todo
   Escenario: Ordenamiento por campo dado un documento
     	Dado que existe un documento 
     	Y el usuario escoge ordenar por alguno de los campos existentes
