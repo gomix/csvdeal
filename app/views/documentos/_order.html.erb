@@ -1,0 +1,23 @@
+<%= form_for(@documento , :html => { :multipart => true }) do |f| %>
+
+  <div id="csv_file_order">
+    <%= label_tag "Seleccione campo:" %>
+    <%=  select_tag "campo", 
+         options_for_select([['nombre', 'nombre'], 
+                            ['apellido', 'apellido'],
+                            ['direccion', 'direccion'],
+                            ['estado', 'estado'],
+                            ['ciudad', 'ciudad']]) %> 
+  </div>
+  
+  <div id="csv_file_order_criterio">
+    <%= label_tag "Seleccione ascendente o descente:" %>
+    <%= select_tag "ascendente",
+    options_for_select([['ascendente','ascendente'],
+                        ['descendiente', 'descendiente']]) %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Ordenar" %>
+  </div>
+<% end %>
