@@ -2,11 +2,11 @@
 @wip
 Característica: Ordenamiento de documento CSV
 
-  Escenario: Ordenamiento por campo dado un documento
-    	Dado que existe un documento 
-    	Y el usuario escoge ordenar por alguno de los campos existentes
-    	Y con el criterio ascendente
-    	Entonces el sistema procedera a ordenar el documento según el criterio dado
-    	Y ofrecerá la opción de seguir ordenando por otro criterio adicional
-    	Y ofrecerá la opción de descarga del documento ordenado
+  Escenario: Ordenamiento ascendente dado un campo de un documento CSV CANTV
+    Dado que existe un documento CSV cargado con el filtro CANTV
+    Y el usuario selecciona el campo por el cual desea ordenar
+    Y el usuario selecciona el criterio de ordenamiento ascendente
+    Cuando el usuario presione el botón correspondiente para ordenar
+    Entonces el sistema confirmará la solicitud del usuario
+    Y cuando termine de ordenar dicho documento, aparecerá el enlace para su descarga
 	

@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 <p id="status" style="{display:none}"><%= flash[:estado] %></p>
-
+<%= render "order" %>
 <%= link_to 'Atrás', documentos_path %>
 <%= link_to "Original", @documento.csv_file.url %>
 <%= link_to "Filtrado para CANTV", @documento.csv_file.url(:cantv) %>

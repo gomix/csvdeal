@@ -70,7 +70,7 @@ Dado(/^que el usuario presiona el enlace para descargar el archivo filtrado CANT
 end
 
 Entonces(/^se obtendrá el documento CSV apto para las guías de consignación CANTV$/) do
-  page.text.should eql("nombre,apellidos foo,bar juan,bimba")
+  page.text.should eql("nombre,apellidos,direccion foo,bar,campos,separados,piso juan,bimba,campos,separados,piso")
 end
 
 Entonces(/^se obtendrá un documento descargable$/) do
@@ -93,11 +93,35 @@ Dado(/^el usuario escoge ordenar por alguno de los campos existentes$/) do
     pending # express the regexp above with the code you wish you had
 end
 
-Dado(/^que existe un documento$/) do
-    pending # express the regexp above with the code you wish you had
-end
-
 Entonces(/^ofrecerá la opción de descarga del documento ordenado$/) do
     pending # express the regexp above with the code you wish you had
 end
 
+Dado(/^que existe un documento CSV cargado con el filtro CANTV$/) do
+  visit('/documentos/new') 
+  page.select('CANTV', :from => 'filtro').should eq "selected"
+  attach_file('documento_csv_file', File.join(Rails.root, 'test', 'csv', 'items-cantv.csv'))
+  # TODO: Desacoplar del texto
+  click_button('Enviar')
+end
+
+Dado(/^el usuario selecciona el campo por el cual desea ordenar$/) do
+  page.select('estado', :from => 'campo').should eq "selected"
+end
+
+Dado(/^el usuario selecciona el criterio de ordenamiento ascendente$/) do
+  page.select('ascendente', :from => 'ascendente').should eq "selected"
+end
+
+Cuando(/^el usuario presione el botón correspondiente para ordenar$/) do
+  # TODO: desacoplar del texto en el botón
+  click_button('Ordenar')
+end
+
+Entonces(/^el sistema confirmará la solicitud del usuario$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+Entonces(/^cuando termine de ordenar dicho documento, aparecerá el enlace para su descarga$/) do
+  pending # express the regexp above with the code you wish you had
+end

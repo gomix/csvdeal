@@ -1,6 +1,5 @@
 # language: es
 
-@wip
 Característica: Filtrado CANTV de documento CSV
   Dado un documento original CSV, se debe poder procesar/filtrar y generar
   un nuevo documento CSV con las especificaciones necesarias para su impresión
