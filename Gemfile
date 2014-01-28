@@ -17,14 +17,14 @@ gem "paperclip"
 
 group :test do
     gem 'cucumber-rails', :require => false
-    gem 'minitest'
+    gem 'minitest', '~>4.7.0'
     gem 'database_cleaner'
     gem 'rspec-rails'
 end
 
 group :development do
     gem 'cucumber-rails', :require => false
-    gem 'minitest'
+    gem 'minitest', '~>4.7.0'
     gem 'database_cleaner'
     gem 'rspec-rails'
 end
