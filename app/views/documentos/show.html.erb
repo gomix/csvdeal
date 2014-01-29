@@ -4,3 +4,12 @@
 <%= link_to 'Atrás', documentos_path %>
 <%= link_to "Original", @documento.csv_file.url %>
 <%= link_to "Filtrado para CANTV", @documento.csv_file.url(:cantv) %>
+<%#= link_to "Ordenado", @documento.csv_file.url(:cantv) if @documento.ordenando_uuid?%>
+<%= link_to "Ordenado", @documento.csv_file.url(:cantv) if @documento.ordenando.eql?(false) %>
+
+<% if @documento.ordenando? %>
+  <p>Su documento se está ordenando</p>
+<% end %>
+
+<p>uuid:<%= @documento.ordenando_uuid.to_s %></p>
+<p>ordenando?:<%= @documento.ordenando.to_s %></p>

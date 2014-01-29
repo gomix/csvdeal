@@ -20,6 +20,18 @@ class DocumentosController < ApplicationController
   def show
     @documento = Documento.find(params[:id])
 
+    # Verificar params para ordenado
+    if params[:commit].eql?("Ordenar")
+      if @documento.ordenando
+        flash[:notice]="Espere hasta que termine de ordenar"
+        flash[:estado]="0"
+      else
+        Resque.enqueue(OrderingWorker, params)   
+        flash[:notice]="Su documento ya está en cola ordenándose"
+        flash[:estado]="0"
+      end
+    end
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @documento }
@@ -29,7 +41,6 @@ class DocumentosController < ApplicationController
   # GET /documentos/new
   # GET /documentos/new.json
   def new
-Resque.enqueue(OrderingWorker, "Hola")    
 @documento = Documento.new
     
     respond_to do |format|

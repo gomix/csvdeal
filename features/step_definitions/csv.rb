@@ -119,7 +119,8 @@ Cuando(/^el usuario presione el botón correspondiente para ordenar$/) do
 end
 
 Entonces(/^el sistema confirmará la solicitud del usuario$/) do
-  pending # express the regexp above with the code you wish you had
+  # Verificar que llegan params
+  page.has_css?('p#status', :text => "0", :visible => false).should eq true
 end
 
 Entonces(/^cuando termine de ordenar dicho documento, aparecerá el enlace para su descarga$/) do
