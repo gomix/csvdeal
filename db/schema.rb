@@ -11,17 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140129064223) do
+ActiveRecord::Schema.define(:version => 20140129174330) do
 
   create_table "documentos", :force => true do |t|
-    t.datetime "created_at",            :null => false
-    t.datetime "updated_at",            :null => false
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
     t.string   "csv_file_file_name"
     t.string   "csv_file_content_type"
     t.integer  "csv_file_file_size"
     t.datetime "csv_file_updated_at"
     t.string   "ordenando_uuid"
     t.boolean  "ordenando"
+    t.string   "remitente"
+    t.string   "tipo_de_envio"
+    t.string   "direccion_del_remitente"
   end
 
 end

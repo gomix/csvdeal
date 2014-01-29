@@ -1,6 +1,7 @@
 <%= form_for(@documento , method: "get") do |f| %>
 
   <div id="csv_file_order">
+    <h2><%= label_tag("Ordenamiento del documento") %></h2>
     <%= label_tag "Seleccione campo:" %>
     <%=  select_tag "campo", 
          options_for_select([['nombre', 'nombre'], 

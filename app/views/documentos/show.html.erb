@@ -1,12 +1,38 @@
 <p id="notice"><%= notice %></p>
 <p id="status" style="{display:none}"><%= flash[:estado] %></p>
-<%= render "order" %>
-<%= link_to 'Atrás', documentos_path %>
-<%= link_to "Original", @documento.csv_file.url %>
-<%= link_to "Filtrado para CANTV", @documento.csv_file.url(:cantv) %>
-<%#= link_to "Ordenado", @documento.csv_file.url(:cantv) if @documento.ordenando_uuid?%>
-<%= link_to "Ordenado", @documento.csv_file.url(:cantv) if @documento.ordenando.eql?(false) %>
 
+<h2>Datos generales</h2>
+
+  <div id="remitente">
+    <%= label_tag("Remitente:") %>
+    <%= @documento.remitente %>
+  </div>
+
+  <div id="direccion_del_remitente">
+    <%= label_tag("Dirección del remitente:") %>
+    <%= @documento.direccion_del_remitente %>
+  </div>
+
+  <div id="tipo_de_envio">
+    <%= label_tag("Tipo de envío:") %>
+    <%= @documento.tipo_de_envio %>
+  </div>
+
+<%= render "order" %>
+
+<h2>Enlaces de descarga</h2>
+<ul>
+  <li><%= link_to "Original", @documento.csv_file.url %>
+  </li>
+  <li><%= link_to "Preprocesado para CANTV", @documento.csv_file.url(:cantv) %>
+  </li>
+  <%#= link_to "Ordenado", @documento.csv_file.url(:cantv) if @documento.ordenando_uuid?%>
+  <li>
+  <%= link_to "Ordenado", @documento.csv_file.url(:cantv) if @documento.ordenando.eql?(false) %></li>
+</ul>
+<%= link_to 'Indice de documentos', documentos_path %>
+
+<h3>Depuración (ignore)</h3>
 <% if @documento.ordenando? %>
   <p>Su documento se está ordenando</p>
 <% end %>

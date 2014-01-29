@@ -11,6 +11,20 @@
     </div>
   <% end %>
 
+  <div id="remitente">
+    <%= label_tag("Remitente") %>
+    <%= f.text_field :remitente %>
+  </div>
+
+  <div id="direccion_del_remitente">
+    <%= label_tag("Dirección del remitente") %>
+    <%= f.text_field :direccion_del_remitente %>
+  </div>
+
+  <div id="tipo_de_envio">
+    <%= label_tag("Tipo de envío") %>
+    <%= f.text_field :tipo_de_envio, :readonly => true %>
+  </div>
 
   <div id="csv_file">
     <%= f.file_field :csv_file %>
