@@ -10,6 +10,7 @@ class Cantv < Paperclip::Processor
   # Performs the conversion of the +cantv_csv_file+ into a +csv_printable_file. 
   # Returns the Tempfile that contains the new csv file.
     def make
+    # @queue = :filtro_csv
       #src = @file
       #dst = Tempfile.new(@basename, :encoding => 'utf8')
       dst = Tempfile.new(@basename)

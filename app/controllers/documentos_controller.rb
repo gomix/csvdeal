@@ -29,8 +29,9 @@ class DocumentosController < ApplicationController
   # GET /documentos/new
   # GET /documentos/new.json
   def new
-    @documento = Documento.new
-
+Resque.enqueue(OrderingWorker, "Hola")    
+@documento = Documento.new
+    
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @documento }
