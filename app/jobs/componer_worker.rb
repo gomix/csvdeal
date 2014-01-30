@@ -43,7 +43,29 @@ class ComponiendoWorker
         code2 = Code.find_by_tomado(false)
         code2.tomado=true
         code2.save
-        
+
+        par =   pares[i].to_csv.chomp + 
+                ",#{src.remitente.gsub(",", "")}" + 
+                ",#{src.direccion_del_remitente.gsub(",", "")}" + 
+                ",#{src.tipo_de_envio}" + 
+                ",#{code1.code}" if pares[i]
+
+        impar = impares[i].to_csv.chomp + 
+                ",#{src.remitente.gsub(",", "")}" + 
+                ",#{src.direccion_del_remitente.gsub(",", "")}" + 
+                ",#{src.tipo_de_envio}" + 
+                ",#{code2.code}" if impares[i]
+
+        par = "" if par.nil?
+        impar = "" if impar.nil?
+        if impar.blank?
+          coma= ""
+        else
+          coma= ","
+        end
+                  
+        f.write( par + coma +  impar + "\n")
+=begin       
         f.write(
                 pares[i].to_csv.chomp + 
                 ",#{src.remitente.gsub(",", "")}" + 
@@ -58,6 +80,7 @@ class ComponiendoWorker
                 ",#{code2.code}" + 
                 "\n" 
         )
+=end
       }
     end
   end
