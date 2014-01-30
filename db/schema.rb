@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140129174330) do
+ActiveRecord::Schema.define(:version => 20140129202843) do
+
+  create_table "codes", :force => true do |t|
+    t.string   "code",       :limit => 14
+    t.boolean  "tomado"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+  end
 
   create_table "documentos", :force => true do |t|
     t.datetime "created_at",              :null => false

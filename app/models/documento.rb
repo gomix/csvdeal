@@ -13,6 +13,17 @@ class Documento < ActiveRecord::Base
 
   def init
     self.tipo_de_envio ||= "Documento"     #will set the default value only if it's nil
+    self.remitente ||= "Ipostel"     #will set the default value only if it's nil
+    self.direccion_del_remitente ||= "San Martín, Caracas, DC."     #will set the default value only if it's nil
+  end
+
+  def componer
+    # Mandar a componer el filtrado en el documento final
+    params = {}
+    params["campo"]="nombre"
+    params["ascendente"]="ascendente"
+    params["id"]=self.id.to_s
+    Resque.enqueue(ComponiendoWorker, params)   
   end
 end
 

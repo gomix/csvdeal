@@ -26,12 +26,8 @@ class Cantv < Paperclip::Processor
 
     def filtrar(row)
       # Recibe una línea y la devuelve filtrada
-      # Los primeros dos campos los dejo tranquilos
-      # El último lo separo en tres por "_" como separador
-      # Devuelve nil si no hay nada en el tercer campo
-      # El formato de origen son 3 campos
       r = case row.size
-        when 4 then (row[0].split("_",4) + row[1].split("_",3) + row.slice(2..3)).to_csv
+        when 4 then (row[0].split("_",4) + row[1].split("_",4) + row.slice(2..3)).to_csv
         when 2 then row.to_csv
         when 1 then row.to_csv
       end
@@ -39,7 +35,6 @@ class Cantv < Paperclip::Processor
     end
 end
 
-        #when 3 then string.split("_").join(",")
 # Muestra de líneas del CSV fuente
 #Cliente ,Direccion ,Region,Peso Gramos
 #0000001_101780573328122013_9009079877_PRESIDENCIA DE LA REPUBLICA,AV URDANETA ED PALACIO BLANCO DPTO ADMINISTRACION_Caracas_Dtto Capital_1010,Capital,20
