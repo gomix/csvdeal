@@ -85,14 +85,5 @@ class ComponiendoWorker
     end
   end
 
-  puts "termino"
 end
-
-
-# Paridera para ir generando línea por línea
-        # Inserción de datos faltantes (remitente,direccion_remitente,tipode envio,codigo de barra)
-        #row = row + [src.remitente, src.direccion_remitente, src.tipo_de_envi, src.direccion_remitente, src.tipo_de_envio, code.code.to_s]
-        #row = row + [src.remitente, src.direccion_remitente, src.tipo_de_envio]
-        # row = row 
-        # f.write(row.to_csv) # Aqui e la escritura
 

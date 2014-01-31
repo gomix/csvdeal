@@ -25,6 +25,25 @@ class Documento < ActiveRecord::Base
     params["id"]=self.id.to_s
     Resque.enqueue(ComponiendoWorker, params)   
   end
+  
+  def componer2
+    # Mandar a componer el filtrado en el documento final
+    params = {}
+    params["campo"]="nombre"
+    params["ascendente"]="ascendente"
+    params["id"]=self.id.to_s
+    Resque.enqueue(Componiendo2Worker, params)   
+  end
+
+  def componer3
+    # Mandar a componer el filtrado en el documento final
+    params = {}
+    params["campo"]="nombre"
+    params["ascendente"]="ascendente"
+    params["id"]=self.id.to_s
+    Resque.enqueue(CaveguiasWorker, params)   
+  end
+
 end
 
 
