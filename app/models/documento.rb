@@ -17,31 +17,43 @@ class Documento < ActiveRecord::Base
     self.direccion_del_remitente ||= "San Martín, Caracas, DC."     #will set the default value only if it's nil
   end
 
-  def componer
-    # Mandar a componer el filtrado en el documento final
+  ####### Componer significa por ahora generar los CSV de acuerdo a un worker dado
+  def componer_superlinea2en1
     params = {}
     params["campo"]="nombre"
     params["ascendente"]="ascendente"
     params["id"]=self.id.to_s
+    # TODO: renombre worker a dos_en_uno_antiguo o algo así no se usa
+    # Recordemos la superlínea
     Resque.enqueue(ComponiendoWorker, params)   
   end
   
-  def componer2
-    # Mandar a componer el filtrado en el documento final
+  def componer_telco
+    # TODO: renombre worker a telco o algo así
+    # Fue el que se usó en impresión Telco
     params = {}
     params["campo"]="nombre"
     params["ascendente"]="ascendente"
     params["id"]=self.id.to_s
-    Resque.enqueue(Componiendo2Worker, params)   
+    Resque.enqueue(TelcoWorker, params)   
   end
 
-  def componer3
-    # Mandar a componer el filtrado en el documento final
+  def componer_caveguias
+    # Fue el que se usó en impresión Caveguías
     params = {}
     params["campo"]="nombre"
     params["ascendente"]="ascendente"
     params["id"]=self.id.to_s
     Resque.enqueue(CaveguiasWorker, params)   
+  end
+
+  def componer_fama
+    # Sera el que se use con Fama
+    params = {}
+    params["campo"]="nombre"
+    params["ascendente"]="ascendente"
+    params["id"]=self.id.to_s
+    Resque.enqueue(FamaWorker, params)   
   end
 
 end

@@ -18,6 +18,11 @@
     <%= @documento.tipo_de_envio %>
   </div>
 
+  <div id="nombre_de_archivo">
+    <%= label_tag("Nombre de archivo:") %>
+    <%= @documento.csv_file_file_name %>
+  </div>
+
 <%= render "order" %>
 
 <h2>Enlaces de descarga</h2>

@@ -1,6 +1,6 @@
 require 'csv'
-class Componiendo2Worker
-  @queue = :componiendo2
+class TelcoWorker
+  @queue = :telco
   
   def self.perform(params)
     src = Documento.find(params["id"].to_i)
